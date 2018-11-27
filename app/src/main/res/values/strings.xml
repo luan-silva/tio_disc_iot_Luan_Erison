@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">opengeo2</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string-array name="sensors_list">
+        <item>Hora</item>
+        <item>Dias da semana</item>
+        <item>Data</item>
+        <item>Luz</item>
+        <item>Temperatura</item>
+        <item>Humidade</item>
+        <item>Porta</item>
+        <item>Set luz</item>
+    </string-array>
+
+    <string-array name="compare">
+        <item>&gt;</item>
+        <item>&lt;</item>
+        <item>=</item>
+    </string-array>
+
+
+</resources>

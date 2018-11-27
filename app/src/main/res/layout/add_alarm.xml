@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="0"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/alarm_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Insira o título"
+                android:inputType="textPersonName"
+                android:textColorHighlight="@android:color/transparent"
+                android:textColorLink="@android:color/transparent"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/SelectPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:clickable="true"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                app:srcCompat="@drawable/home_map_marker" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/sensor_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/alarm_off" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="20dp"
+                android:adjustViewBounds="false"
+                android:clickable="true"
+                android:scaleType="centerCrop"
+                android:scrollbarAlwaysDrawHorizontalTrack="false"
+                app:fabSize="normal"
+                app:srcCompat="@drawable/sensor"
+                app:useCompatPadding="false" />
+
+            <ImageButton
+                android:id="@+id/save_alarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="false"
+                android:background="@android:color/transparent"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:src="@drawable/alarm_check" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sensors_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlackTrans"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="50dp"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="3dp">
+
+            <ListView
+                android:id="@+id/sensor_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:entries="@array/sensors_list" />
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/place"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBlackTrans"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            app:cardBackgroundColor="@color/colorPrimary"
+            app:cardCornerRadius="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Selecionar local dos sensores"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/useMyPosition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="Usar minha posição" />
+
+                <LinearLayout
+                    android:id="@+id/getLocal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/local"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:text="Local: " />
+
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/map"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="2">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/txtLocal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Cômodo"
+                                android:textSize="16sp" />
+                        </android.support.design.widget.TextInputLayout>
+
+                        <android.support.design.widget.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_weight="2">
+
+                            <android.support.design.widget.TextInputEditText
+                                android:id="@+id/txtSenha"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Senha"
+                                android:inputType="textPassword"
+                                android:textSize="16sp" />
+                        </android.support.design.widget.TextInputLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_weight="0"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/cancel_place"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="2"
+                        android:background="@android:color/transparent"
+                        android:text="@android:string/cancel" />
+
+                    <Button
+                        android:id="@+id/save_place"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_weight="2"
+                        android:background="@android:color/transparent"
+                        android:text="@android:string/ok" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</RelativeLayout>

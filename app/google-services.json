@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "843175067145",
+    "firebase_url": "https://opengeoiot.firebaseio.com",
+    "project_id": "opengeoiot",
+    "storage_bucket": "opengeoiot.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:843175067145:android:a5272c1345849e6c",
+        "android_client_info": {
+          "package_name": "com.example.erisonmiller.opengeo2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "843175067145-4q6qdldhbp7b9f2nlp6nsd1kba3roq9p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIFx-xVDCgv7J-OBXOLRjf9NpcIUxvTf8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
